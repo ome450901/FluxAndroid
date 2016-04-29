@@ -12,7 +12,7 @@ import static com.willy.fluxandroid.action.ButtonAction.ButtonActionType.OTHER;
  */
 public class MainStore extends Store {
 
-    private static MainStore instance;
+    private volatile static MainStore instance;
 
     public static MainStore getInstance() {
         if (instance == null) {

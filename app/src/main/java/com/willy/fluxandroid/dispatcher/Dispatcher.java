@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Dispatcher {
 
-    private static Dispatcher instance;
+    private volatile static Dispatcher instance;
 
     private final Bus mBus;
 

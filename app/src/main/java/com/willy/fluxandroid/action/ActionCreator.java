@@ -10,7 +10,7 @@ import static com.willy.fluxandroid.action.ButtonAction.ButtonActionType.OTHER;
  */
 public class ActionCreator {
 
-    private static ActionCreator instance;
+    private volatile static ActionCreator instance;
 
     private Dispatcher mDispatcher;
 
