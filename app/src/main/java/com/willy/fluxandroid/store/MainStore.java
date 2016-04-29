@@ -3,9 +3,7 @@ package com.willy.fluxandroid.store;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 import com.willy.fluxandroid.action.Action;
-
-import static com.willy.fluxandroid.action.ButtonAction.ButtonActionType.CLICk;
-import static com.willy.fluxandroid.action.ButtonAction.ButtonActionType.OTHER;
+import com.willy.fluxandroid.action.ButtonActions;
 
 /**
  * Created by Willy on 2016/4/28.
@@ -36,13 +34,13 @@ public class MainStore extends Store {
     public void onAction(Action action) {
         super.onAction(action);
         switch (action.getType()) {
-            case CLICk:
-                mText = "On Click Action!";
+            case ButtonActions.CLICk:
                 //do something
+                mText = action.getData().get("text").toString();
                 break;
-            case OTHER:
-                mText = "On Other Action!";
+            case ButtonActions.OTHER:
                 //do something
+                mText = action.getData().get("text").toString();
         }
         emitChange();
     }
